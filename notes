@@ -1,0 +1,19 @@
+Portfolio:
+has_many: transactions 
+Attributes: name, account no, 
+
+stock_transactions: 
+belongs_to: portfolio
+Attributes: 
+    Portfolio_id:  integer
+    stock_name: string
+    stock_ticker: string
+    transaction_type: string
+    average_price: float
+    quantity:integer
+    date: datetimer
+
+
+
+
+
