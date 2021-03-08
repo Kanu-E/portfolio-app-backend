@@ -1,2 +1,2 @@
-class Api::V1::PortfoliosController < ApplicationController
+class PortfoliosController < ApplicationController
 end

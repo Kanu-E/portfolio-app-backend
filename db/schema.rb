@@ -23,12 +23,14 @@ ActiveRecord::Schema.define(version: 2021_03_08_052014) do
     t.string "name"
     t.string "stock_ticker"
     t.string "transaction_type"
-    t.string "portfolio_id"
+    t.integer "portfolio_id", null: false
     t.float "average_price"
     t.datetime "date"
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["portfolio_id"], name: "index_stock_transactions_on_portfolio_id"
   end
 
+  add_foreign_key "stock_transactions", "portfolios"
 end
