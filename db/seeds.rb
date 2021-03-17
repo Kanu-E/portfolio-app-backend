@@ -7,4 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 portfolios = Portfolio.create([{name: 'Emeka', cash_balance: 120000},{name:'Noah', cash_balance: 190000}])
-stock_transactions = StockTransaction.create([{name: 'Amazon', stock_ticker:'AMZN', transaction_type:'open', portfolio_id:1, average_price:3100,  date: DateTime.now, quantity: 100},{name: 'Apple', stock_ticker:'AAPL', transaction_type:'open', portfolio_id:1, average_price:119.9,  date: DateTime.now, quantity: 100}, {name: 'TESLA', stock_ticker:'TSLA', transaction_type:'open', portfolio_id:2, average_price:601,  date: DateTime.now, quantity: 100}])
+trades = Trade.create([{name: 'Amazon', stock_ticker:'AMZN', trade_type:'open', portfolio_id:1, average_price:3100,  date: DateTime.now, quantity: 100},{name: 'Apple', stock_ticker:'AAPL', trade_type:'open', portfolio_id:1, average_price:119.9,  date: DateTime.now, quantity: 100}, {name: 'TESLA', stock_ticker:'TSLA', trade_type:'open', portfolio_id:2, average_price:601,  date: DateTime.now, quantity: 100}])
+Trade.create(name: 'TESLA', stock_ticker:'TSLA', trade_type:'open', portfolio_id:2, average_price:621,  date: DateTime.now, quantity: 20)

@@ -5,6 +5,7 @@ class Api::V1::PortfoliosController < ApplicationController
     end
 
     def create
+        # binding.pry
         @portfolio = Portfolio.new(portfolio_params)
         if @portfolio.save
             render json: @portfolio
@@ -18,16 +19,28 @@ class Api::V1::PortfoliosController < ApplicationController
         render json: @portfolio
     end
 
+    def update   
+        @portfolio = Portfolio.find(params[:id])
+        @portfolio.update(portfolio_params)
+        @portfolio.save
+        render json: @portfolio
+    end
+
 
     def destroy
+        binding.pry
         @portfolio = Portfolio.find(params[:id])
-        portfolio.destroy
+        # binding.pry
+        @portfolio.destroy
     end
 
     private
+    def set_portfolio
+        @portfolio =Portfolio.find(params[:portfolio_id])
+    end
 
     def portfolio_params
-        params.require(:portfolio).permit(:name, cash_balance)
+        params.require(:portfolio).permit(:name, :cash_balance)
     end
 
 end

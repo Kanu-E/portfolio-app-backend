@@ -19,18 +19,18 @@ ActiveRecord::Schema.define(version: 2021_03_08_052014) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "stock_transactions", force: :cascade do |t|
+  create_table "trades", force: :cascade do |t|
     t.string "name"
     t.string "stock_ticker"
-    t.string "transaction_type"
+    t.string "trade_type"
     t.integer "portfolio_id", null: false
     t.float "average_price"
     t.datetime "date"
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["portfolio_id"], name: "index_stock_transactions_on_portfolio_id"
+    t.index ["portfolio_id"], name: "index_trades_on_portfolio_id"
   end
 
-  add_foreign_key "stock_transactions", "portfolios"
+  add_foreign_key "trades", "portfolios"
 end
