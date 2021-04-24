@@ -5,8 +5,8 @@ class Api::V1::PortfoliosController < ApplicationController
     end
 
     def create
-        # binding.pry
         @portfolio = Portfolio.new(portfolio_params)
+        # binding.pry
         if @portfolio.save
             render json: @portfolio
         else
@@ -28,7 +28,7 @@ class Api::V1::PortfoliosController < ApplicationController
 
 
     def destroy
-        binding.pry
+        # binding.pry
         @portfolio = Portfolio.find(params[:id])
         # binding.pry
         @portfolio.destroy
